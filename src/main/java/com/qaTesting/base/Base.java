@@ -18,7 +18,6 @@ public class Base {
 		expilictWait();
 	}
 	
-	
 	public static WebDriver driver;
 	public static WebDriverWait explicitWait;
 	
