@@ -2,18 +2,16 @@ pipeline {
     agent any
     
     stages {
-        stage('build') {
+        stage("build") {
             steps {
-                sh 'mvn --version'
+                echo 'building the application....'
             }
         }
         
-        stage('build') {
+        stage("test") {
             steps {
-                sh 'mvn --version'
+               echo 'building the application....'
             }
         }
-    }
-    
-    
+    }    
 }
