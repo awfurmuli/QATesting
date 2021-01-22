@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="come.qaTesting.pages.SaveTest">
+      <class name="com.qaTesting.tests.FiddleTests">
         <methods>
+          <include name="shareButtonTest"/>
           <include name="maximize"/>
-          <include name="checkSaveTest"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- come.qaTesting.pages.SaveTest -->
+      </class> <!-- com.qaTesting.tests.FiddleTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -5,8 +5,11 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -20,6 +23,7 @@ public class Base {
 	
 	public static WebDriver driver;
 	public static WebDriverWait explicitWait;
+	public static Actions action;
 	
 	public void initialize() {
 		WebDriverManager.chromiumdriver().setup();
@@ -33,15 +37,14 @@ public class Base {
 	public void expilictWait() {
 		explicitWait = new WebDriverWait(driver, 5);
 	}
-	
-
+		
 	@BeforeTest
-	public void maximize() {
+	public void opening() {
 		driver.manage().window().maximize();
-		driver.navigate().to("https://dotnetfiddle.net/");
+		action = new Actions(driver);
 	}
 	
-	//@AfterTest
+	@AfterTest
 	public void closeBrowser() {
 		driver.quit();
 	}
